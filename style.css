@@ -1,0 +1,331 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	
+	/*overflow-x: hidden; *//* NO X SCROLLBAR */
+}
+
+body, * body { /* RESET AND GENERAL FORMAT */
+	padding: 0;
+	margin: 0;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	color: #fff;
+}
+
+.background {  /* VIDEO BACKGROUND */
+	position: fixed;
+	right: 0;
+	top: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	background-size: cover;
+}
+
+.background-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -99;
+	background-color: rgba(13,23,37,0.50);
+}
+
+header { /* HEADER BAR */
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: #1B2E48;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+}
+
+nav {
+	width: 95%;
+}
+
+header img, header form {
+	display: inline-block;
+	float: left;
+	height: 100px;
+}
+
+header img {
+	width: 100px;
+}
+
+header form{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.nav-buttons {
+	float: right;
+}
+
+input, button {
+	padding: 10px;
+	border: 1px solid #fff;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+input{
+	background-color: #121D2E;
+	color: #fff;
+	transition: 0.25s;
+}
+
+input:hover{
+	background-color: rgba(27,46,72,1.00);
+}
+
+button {
+	cursor: pointer;
+	background-color: #559988;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.25s;
+}
+
+button:hover{
+	background-color: #76C2AF;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	width: 75%;
+	margin-top: 150px;
+}
+
+.hero-wrapper{
+	display: flex;
+	flex-direction: row;
+}
+
+.vertical-wrapper{
+	display: flex;
+	flex-direction: column;
+	padding-right: 20px;
+}
+
+.hero-wrapper img {
+	width: 300px;
+	height: 300px;
+	transition: 0.25s;
+}
+
+.form-down {
+	display: inline-block;
+}
+
+@keyframes tilt {
+	0%{transform: rotate(0)}
+	100%{transform: rotate(-360deg)}
+	
+}
+
+header img:hover, main img:hover{
+	animation: tilt 1s ease-in-out;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 50px;
+	font-weight: bolder;
+	padding: 0;
+	margin: 0;
+}
+
+h2 {
+	text-transform: uppercase;
+	font-size: 34px;
+	font-weight: 300;
+	letter-spacing: 9px;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+	font-weight: 300;
+}
+
+.hidden {
+	display: none;
+}
+
+.accounts-wrapper{
+	margin: 20px 0;
+}
+
+table td {
+	padding: 5px;
+	background-color: rgba(109,127,156,0.50);
+	transition: 0.25s ease-in-out;
+}
+
+table tr:hover td{
+	background-color: rgba(109,127,156,1.00);
+	cursor: pointer;
+	padding: 15px 5px;
+}
+
+table thead tr td {
+	background-color: rgba(27,46,72,0.50);
+}
+
+table thead tr:hover td {
+	background-color: #1B2E48;
+}
+
+table tbody{
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+center-text{
+	text-align: center;
+}
+
+.responsive-loginbox{
+	display: none;
+}
+
+.nav-buttons-responsive{
+	display: none;
+}
+
+.vertical-wrapper img {
+	display: none;
+}
+
+hr {
+	border-top: 1px solid #fff;
+}
+
+textarea {
+	resize: none;
+	background-color: #121D2E;
+	color: #fff;
+	border: solid 1px #fff;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	padding: 10px;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	background-color: #1B2E48;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	color: rgba(109,127,156,1.00);
+	margin-top: 20px;
+}
+
+footer img {
+	width: 100px;
+	height: 100px;
+}
+
+footer a {
+	color: rgba(109,127,156,1.00);
+}
+
+.vertical-wrapper p {
+	margin: 10px 0;
+}
+
+@keyframes pull{
+		0%{transform: translateY(0)}
+		25%{transform: translateY(-20%)}
+		50%{transform: translateY(0)}
+		75%{transform: translateY(-20%)}
+		100%{transform: translateY(0)}
+}
+
+/* RESPONSIVE FEATURES */
+@media screen and (max-width: 900px){
+	.responsive-loginbox{
+		display: inline-flex;
+	}
+	.nav-buttons, .secondary-text, .img-full{
+		display: none;
+	}
+	.nav-buttons-responsive{
+		display: flex;
+	}
+	.vertical-wrapper img {
+		display: inline-block;
+		max-width: 100px;
+		max-height: 100px;
+		margin-top: 20px;
+	}
+	.vertical-wrapper:not(.accounts-wrapper){
+		text-align: center;
+		align-items: center;
+	}
+	.loginbox{
+		align-items: center;
+		text-align: center;
+	}
+	.loginbox h2 {
+		margin-bottom: 20px;
+	}
+	
+	#pull{
+		animation: pull 2s infinite ease-in-out;
+		z-index: 99;
+	}
+	h1{
+		font-size: 40px;
+	}
+	h2{
+		font-size: 30px;
+	}
+	.form-padding{
+		margin-top: 20px;
+	}
+	header img, header form{
+		height: 50px;
+	}
+	header img {
+		width: 50px;
+	}
+	.form-down {
+		display: flex;
+		margin-top: 10px;
+	}
+	.form-down button {
+		margin: 0 auto;
+	}
+	.container{
+		margin-top: 100px;
+	}
+	.form-vertical {
+	display: flex;
+	flex-direction: column;
+}
+	
+}
+
